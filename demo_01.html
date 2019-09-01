@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <style>
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+    <script type='text/javascript' src='js/vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <div></div>
+        <input type="text" v-model = 'user'>账号
+        <input type="password" v-model = 'password'>密码
+        <input type="button" value="登录" @click = 'aa'>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                msg:'hellow Vue',
+                user:'',
+                password:'',
+            },
+            methods:{
+                aa(){
+                    console.log(this.user,this.password);
+                    
+                }
+            }
+        });
+    </script>
+</body>
+
+</html> 
