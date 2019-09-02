@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script type='text/javascript' src='js/vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>
+            数值A：<input type="text" v-model='a'>
+        </span>
+        <select  v-model ='select' >
+            <option v-for = "(item , index) in symbol" :value="index" >{{item}}</option>
+        </select>
+        <span>
+            数值B：<input type="text" v-model='b'>
+        </span>
+        <span>
+            <button type="button" v-on:click='headle'>=</button>
+        </span>
+        <span><input type="text" v-model='result'></span>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                a: '',
+                select:'',
+                symbol:['+','-','×','÷'],
+                b: '',
+                result: '',
+            },
+            methods: {
+                headle:function(index) {
+                    this.result = 0;
+                    // console.log(this.select);
+                    console.log(index);
+                    
+                    
+                    if (this.select == '0'){
+                        this.result = parseInt(this.a) + parseInt(this.b);
+                    };
+                    if (this.select == '1'){
+                        this.result = parseInt(this.a) - parseInt(this.b);
+                    };
+                    if (this.select == '2'){
+                        this.result = parseInt(this.a) * parseInt(this.b);
+                    };
+                    if (this.select == '3'){
+                        this.result = parseInt(this.a) / parseInt(this.b);
+                    };
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

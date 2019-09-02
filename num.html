@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script type='text/javascript' src='js/vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            数值A：<input type="text" v-model = 'a'>
+        </div>
+        <div>
+            数值B：<input type="text" v-model = 'b'>
+        </div>
+        <div>
+            <button type="button" v-on:click = 'headle'>计算</button>
+        </div>
+        <div>计算结果为：{{result}}</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                a:'',
+                b:'',
+                result:''
+            },
+            methods: {
+                headle(){
+                    this.result = parseInt(this.a) + parseInt(this.b);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

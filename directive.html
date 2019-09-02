@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='js/vue.js'></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" value="123" v-aa = "color">
+    </div>
+    <script>
+        Vue.directive('aa',{
+            bind(el,binging){
+                el.style.color = binging.value
+            }
+        })
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                color:'red'
+            }
+
+        })
+    </script>
+
+</body>
+</html>
